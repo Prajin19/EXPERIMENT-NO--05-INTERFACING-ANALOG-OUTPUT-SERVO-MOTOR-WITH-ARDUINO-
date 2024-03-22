@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 22-03-2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: Prajin S
+###  ROLL NO : 212223230151
+###  DEPARTMENT: Artificial Intelligence and Data Sceince
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -38,12 +38,12 @@ An external controller (such as the Arduino) tells the servo where to go with a 
  
  ![image](https://user-images.githubusercontent.com/36288975/163544482-3027136f-7135-4f3d-a23f-8dc2fe04194d.png)
 
-### Figure-02 SERVO MOTOR PINS
+#### Figure-02 SERVO MOTOR PINS
 
  ![image](https://user-images.githubusercontent.com/36288975/163544513-ca497421-e6ba-4f91-871f-5cfba77f22a8.png)
 
 
-### Figure-03 SERVO MOTOR OVERVIEW 
+#### Figure-03 SERVO MOTOR OVERVIEW 
 
  
 
@@ -54,12 +54,12 @@ An external controller (such as the Arduino) tells the servo where to go with a 
 
 
 
-CIRCUIT DIAGRAM
+## CIRCUIT DIAGRAM
  
  
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
-### FIGURE 04 CIRCUIT DIAGRAM
+#### FIGURE 04 CIRCUIT DIAGRAM
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -74,11 +74,62 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+```
+#include<Servo.h>
+Servo sa;
+int po=0,red=9,gre=8;
+void setup()
+{
+  sa.attach(6);
+  Serial.begin(9600);
+  pinMode(red,OUTPUT);
+  pinMode(gre,OUTPUT);
+}
+void loop()
+{
+  for(po=0;po<=180;po+=5)
+  {
+    sa.write(po);
+    delay(200);
+  	Serial.println(po);
+    if(po>=120)
+    {
+    	digitalWrite(red,HIGH);
+    	delay(200);
+    	digitalWrite(red,LOW);
+    	delay(200);
+  	}
+  }
+  for(po=180;po>=0;po-=5)
+  {
+    sa.write(po);
+  	delay(200);
+  	Serial.println(po);
+    if(po<=120)
+  	{
+    	digitalWrite(gre,HIGH);
+    	delay(200);
+    	digitalWrite(gre,LOW);
+    	delay(200);
+  	}  
+  } 
+}
+```
+![Screenshot 2024-03-22 161158](https://github.com/Prajin19/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144979377/da2e687a-9acf-447d-a1ff-d51a1d3e5233)
+#### FIGURE 05 GRAPH
 
+### Simulation Output
+![Screenshot 2024-03-22 161333](https://github.com/Prajin19/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144979377/e6b7fb01-6bfd-4db7-9ff3-30f723daa490)
+#### FIGURE 06 OFF CONDITION
 
+![Screenshot 2024-03-22 161219](https://github.com/Prajin19/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144979377/cb385c4e-fc6d-4032-a84e-c043278e0bf3)
+#### FIGURE 07 ON CONDITION(POS<120,GREEN)
 
+![Screenshot 2024-03-22 161301](https://github.com/Prajin19/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144979377/f24fcf53-4edf-4bb8-ae39-31134f86a794)
+#### FIGURE 08 ON CONDITION (POS>120,RED)
 
+![Screenshot 2024-03-22 161432](https://github.com/Prajin19/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/144979377/4ffc2880-7245-484c-910c-ec26d555aab9)
+#### FIGURE 09 SCHEMATIC SIMULATION
 
 
 

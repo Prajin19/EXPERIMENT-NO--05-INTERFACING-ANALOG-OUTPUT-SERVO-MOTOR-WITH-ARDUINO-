@@ -1,11 +1,11 @@
-###  DATE: 22-03-2024
-
+# EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
 ###  NAME: Prajin S
+###  DATE: 01-05-2024
 ###  ROLL NO : 212223230151
 ###  DEPARTMENT: Artificial Intelligence and Data Sceince
 
 
-# EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
+
 
 ### AIM
 To interface an Analog output (servo motor) and modify the angular displacement of the servo using PWM signal .
